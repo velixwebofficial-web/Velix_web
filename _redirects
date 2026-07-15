@@ -1,4 +1,0 @@
-# Netlify: rewrite clean project URLs to the underlying static page.
-# If you deploy this site on Netlify, this file (at the site root) is picked
-# up automatically — no further setup needed.
-/projects/:slug   /project.html?slug=:slug   200
