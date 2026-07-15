@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<script>(function(){try{var l=localStorage.getItem('velix-lang');if(!l){var n=(navigator.language||'en').toLowerCase();l=n.indexOf('ar')===0?'ar':'en';}document.documentElement.setAttribute('lang',l);document.documentElement.setAttribute('dir',l==='ar'?'rtl':'ltr');}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Page Not Found — VELIX Web Solutions</title>
+<meta content="noindex, follow" name="robots"/>
+<link href="assets/img/favicon.ico" rel="icon" sizes="any"/>
+<link href="assets/img/favicon-16.png" rel="icon" type="image/png" sizes="16x16"/>
+<link href="assets/img/favicon-32.png" rel="icon" type="image/png" sizes="32x32"/>
+<link href="assets/img/favicon-48.png" rel="icon" type="image/png" sizes="48x48"/>
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=Cairo:wght@500;600;700;800&amp;family=Tajawal:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<style>
+  .error-page {
+    min-height: 84vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: var(--space-8) var(--space-5); position: relative; overflow: hidden;
+  }
+  .error-page::before { content: ''; position: absolute; inset: 0; background: var(--gradient-mesh); z-index: 0; pointer-events: none; }
+  .error-page > * { position: relative; z-index: 1; }
+  .error-code { font-family: var(--font-display); font-weight: 800; font-size: clamp(5rem, 14vw, 9rem); line-height: 1; background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .error-page h1 { margin-top: var(--space-3); }
+  .error-page p { color: var(--color-muted); max-width: 480px; margin: var(--space-4) auto var(--space-7); }
+  .error-actions { display: flex; gap: var(--space-4); flex-wrap: wrap; justify-content: center; }
+</style>
+</head>
+<body>
+<header class="navbar">
+<div class="container">
+<a aria-label="VELIX Web Solutions home" class="brand" href="index.html"><img alt="VELIX Web Solutions" src="assets/img/logo.png"/></a>
+<nav aria-label="Primary" class="nav-links">
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="portfolio.html">Portfolio</a>
+<a href="about.html">About</a>
+<a href="news.html">News</a>
+<a href="contact.html">Contact</a>
+</nav>
+<div class="nav-actions"><a class="btn btn-primary" href="contact.html"><span>Start Your Project</span><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"></path></svg></a></div>
+</div>
+</header>
+<main id="main-content">
+<section class="error-page">
+<div class="error-code">404</div>
+<h1>This page wandered off.</h1>
+<p>The page you're looking for doesn't exist — it may have moved, or the link might have a typo. Let's get you back on track.</p>
+<div class="error-actions">
+<a class="btn btn-primary btn-lg" href="index.html"><span>Back to Homepage</span></a>
+<a class="btn btn-outline btn-lg" href="portfolio.html"><span>View Our Work</span></a>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-bottom">
+<p><span>© </span><span data-year="">2026</span><span> VELIX Web Solutions. All rights reserved.</span></p>
+<div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></div>
+</div>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/supabase-config.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/chat-widget.js"></script>
+</body>
+</html>
