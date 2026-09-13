@@ -1,5 +1,41 @@
 [
   {
+    "id": "5e3761b5-b028-4f7d-8c0b-a91200e848aa",
+    "slug": "south-axis",
+    "title": "south axis",
+    "subtitle": "",
+    "client": "south axis",
+    "category": "Corporate Website",
+    "location": "",
+    "completionDate": "2026-03-11",
+    "featured": true,
+    "published": true,
+    "websiteUrl": "",
+    "description": "A modern corporate website developed for South Axis, a Jordanian company specializing in steel structures and construction solutions. The website presents the company's services, projects, capabilities, and business information through a professional and responsive digital experience.",
+    "overview": "",
+    "challenge": "",
+    "solution": "",
+    "results": [],
+    "services": [],
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Responsive Design"
+    ],
+    "cover": "/uploads/projects/1789316774289-a119753acaaeddd4.png",
+    "gallery": [
+      "/uploads/projects/1789316780720-4bef4daeb65108ea.png",
+      "/uploads/projects/1789316786982-9098c7957b31c937.png"
+    ],
+    "seoTitle": "south axis",
+    "seoDescription": "A modern corporate website developed for South Axis, a Jordanian company specializing in steel structures and construction solutions. The website presents the company's services, projects, capabilities, and business information through a professional and responsive digital experience.",
+    "sortOrder": 0,
+    "createdAt": "2026-09-13T16:26:28.427Z",
+    "updatedAt": "2026-09-13T16:26:28.427Z",
+    "deletedAt": null
+  },
+  {
     "id": "b5b158c0-0198-4ac6-b2d0-862c485f5d06",
     "slug": "moassa-abdeen-agricultural-equipment",
     "title": "Moassa Abdeen Agricultural Equipment",
