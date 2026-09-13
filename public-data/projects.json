@@ -1,5 +1,43 @@
 [
   {
+    "id": "4b4cf669-79e1-4591-b742-44f11698111e",
+    "slug": "velix-cybersecurity",
+    "title": "VELIX Cybersecurity",
+    "subtitle": "",
+    "client": "VELIXX",
+    "category": "Cybersecurity",
+    "location": "",
+    "completionDate": "2026-06-03",
+    "featured": true,
+    "published": true,
+    "websiteUrl": "",
+    "description": "A modern cybersecurity platform developed by VELIXX to help businesses assess and improve their website security. The platform provides security scanning, vulnerability assessment, security analysis, and cybersecurity tools through a professional and easy-to-use interface.",
+    "overview": "",
+    "challenge": "",
+    "solution": "",
+    "results": [],
+    "services": [],
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js",
+      "Cybersecurity"
+    ],
+    "cover": "/uploads/projects/1789316811323-289874b0811e927d.png",
+    "gallery": [
+      "/uploads/projects/1789316823746-3e83172d1723b314.png",
+      "/uploads/projects/1789316823734-b42d72bea639461f.png",
+      "/uploads/projects/1789316823742-2f42ce42c678f341.png"
+    ],
+    "seoTitle": "VELIX Cybersecurity",
+    "seoDescription": "A modern cybersecurity platform developed by VELIXX to help businesses assess and improve their website security. The platform provides security scanning, vulnerability assessment, security analysis, and cybersecurity tools through a professional and easy-to-use interface.",
+    "sortOrder": 0,
+    "createdAt": "2026-09-13T16:28:32.705Z",
+    "updatedAt": "2026-09-13T16:28:32.705Z",
+    "deletedAt": null
+  },
+  {
     "id": "5e3761b5-b028-4f7d-8c0b-a91200e848aa",
     "slug": "south-axis",
     "title": "south axis",
