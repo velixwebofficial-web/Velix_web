@@ -1,0 +1,23 @@
+{
+  "name": "velix-web-solutions",
+  "version": "3.0.0",
+  "private": true,
+  "description": "VELIX Web Solutions — a static public website (deployable to any static host, no backend required) plus a local Node.js admin server (SQLite database, local file storage, admin/chat APIs, Claude API for AI chat) that is only needed for /admin. See README.md's \"Architecture\" section.",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "echo 'Nothing to build — this is a static site + a plain Node server. Run with `npm start`.' && exit 0",
+    "lint": "node scripts/check.js",
+    "typecheck": "echo 'No TypeScript in this project — nothing to typecheck.' && exit 0",
+    "test": "node scripts/check.js",
+    "backup": "node scripts/backup-db.js",
+    "publish-site": "node scripts/publish-site.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
+    "bcryptjs": "^3.0.3"
+  }
+}

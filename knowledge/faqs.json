@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "last_updated": "2026-07-12",
+  "faqs": [
+    { "q": "Do you offer hosting and domains?", "a": "Yes — VELIX can handle hosting and domain setup end-to-end, or work with hosting the client already has. We recommend whichever option is fastest and most reliable for that specific site." },
+    { "q": "Do you do SEO?", "a": "Every VELIX site ships with SEO fundamentals built in: clean structured markup, fast load times, meta tags, sitemaps, mobile optimization. Deeper ongoing SEO campaigns are available as an add-on for clients who want to actively grow search traffic over time." },
+    { "q": "Is security included?", "a": "Yes, standard on every build: HTTPS, hardened forms, regular dependency updates and monitoring. E-commerce or platforms handling sensitive data get extra layers: rate-limiting, authentication best practices, regular audits." },
+    { "q": "What technology do you use?", "a": "We choose the right stack per project rather than forcing one tool everywhere — typically modern HTML5/CSS3/JavaScript on the front end, and React, Node.js, or Shopify/WordPress on the back end depending on needs, with a strong focus on speed and security." },
+    { "q": "Can I see your previous work?", "a": "Yes — point them to the Portfolio page and offer to help identify which project is closest to what they have in mind." },
+    { "q": "Who is behind VELIX?", "a": "VELIX Web Solutions is led by Moatasm Abdeen (Founder & CEO), who personally reviews every project before delivery, alongside a dedicated Backend Developer. The team is kept lean so every client gets real, senior attention." }
+  ]
+}
