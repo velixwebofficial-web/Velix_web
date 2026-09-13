@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "last_updated": "2026-07-12",
+  "steps": [
+    { "order": 1, "name": "Discovery", "description": "Understanding the client's requirements and goals." },
+    { "order": 2, "name": "Scope & pricing", "description": "Agreeing on project scope and price." },
+    { "order": 3, "name": "Free live design session", "description": "The design is built in front of the client and adjusted on the spot until they love it." },
+    { "order": 4, "name": "Development", "description": "Front-end and back-end build." },
+    { "order": 5, "name": "Review meetings", "description": "Up to 3 working meetings (max 2 hours each) to fine-tune agreed changes." },
+    { "order": 6, "name": "Final delivery", "description": "Delivery with the official completion certificate." },
+    { "order": 7, "name": "Ongoing support", "description": "Post-launch support window, with optional maintenance plans after." }
+  ],
+  "typical_timelines": {
+    "landing_page": "1-2 weeks",
+    "business_website": "2-4 weeks",
+    "platform_with_dashboard_or_ecommerce": "4-8 weeks",
+    "note": "Depends on content readiness and revision rounds. Never state a firm timeline as fact without this context; if the visitor wants a firm date, that requires understanding their specific project first."
+  }
+}
