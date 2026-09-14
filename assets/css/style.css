@@ -37,6 +37,12 @@
   --color-primary-light: #1c2c42;
   --color-primary-tint: #EEF1F6;
 
+  /* VELIX brand accent — Royal Blue. Used sparingly as an interaction/
+     accent color (hover states, focus glows) against the ink/white base;
+     never as a decorative gradient or background fill. */
+  --color-royal: #1D4EFF;
+  --color-royal-tint: rgba(29, 78, 255, 0.08);
+
   /* Neutrals */
   --color-white: #FFFFFF;
   --color-bg-soft: #F7F8FC;
@@ -831,53 +837,70 @@ h1, h2, h3, h4, h5 {
 }
 
 /* -------------------------------------------------------------------------
-   10. PORTFOLIO
+   10. PORTFOLIO — equal 3-up showcase grid
+   Every project gets the same card: real screenshot at its own natural
+   aspect ratio on top (no cropping, no forced box, no dead white space),
+   a slim dark information footer underneath. Desktop shows 3 equal cards
+   per row (wrapping to further rows of 3 on the full portfolio page,
+   since the homepage preview is always exactly 3), tablet shows 2, mobile
+   shows 1. No hero, no asymmetric spans, no vertical stacking on desktop.
    ------------------------------------------------------------------------- */
-.portfolio-grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-7); }
 
-.project-card {
-  display: block;
-  border-radius: 28px;
-  overflow: hidden;
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-sm);
-  cursor: pointer;
-  transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out), border-color 0.5s var(--ease-out);
-}
-.project-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(29, 78, 255, 0.25);
-  /* soft blue glow, layered under a normal elevated shadow */
-  box-shadow: 0 30px 60px -20px rgba(11, 15, 25, 0.18), 0 0 0 1px rgba(29,78,255,0.04), 0 18px 46px -12px rgba(29, 78, 255, 0.22);
-}
+/* Section runs wider than the site's normal 1240px container so three
+   large cards read as prominent, not cramped. */
+.portfolio-wide { max-width: 1600px; width: 92%; }
 
-.project-thumb {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: var(--color-bg-soft);
+.portfolio-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-7);
 }
+.portfolio-header-text { max-width: 560px; }
+.portfolio-header-text .eyebrow,
+.portfolio-header-text h2 { margin-bottom: var(--space-3); }
+.portfolio-header-desc { font-size: 0.98rem; color: var(--color-ink-soft); line-height: 1.6; }
+.portfolio-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  flex-shrink: 0;
+}
+.portfolio-nav-arrows { display: flex; gap: 10px; }
+.portfolio-nav-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-border-strong);
+  color: var(--color-ink);
+  transition: background 0.3s var(--ease-out), border-color 0.3s var(--ease-out), color 0.3s var(--ease-out);
+}
+.portfolio-nav-btn svg { width: 18px; height: 18px; }
+.portfolio-nav-btn:hover { background: var(--color-ink); border-color: var(--color-ink); color: #fff; }
+
+/* Fallback "scene" for projects with no screenshot yet — an on-brand
+   gradient card, never a generic gray placeholder. Uses a fixed aspect
+   ratio (unlike real screenshots) since there's no natural image ratio
+   to defer to. */
 .project-scene {
-  position: absolute; inset: 0;
+  position: relative;
+  aspect-ratio: 3 / 2;
   display: flex;
   align-items: flex-end;
   padding: var(--space-5);
-  transition: transform 0.6s var(--ease-out);
-  background: var(--gradient-dark); /* fallback so any category still shows a scene, not a blank box */
+  background: var(--gradient-dark);
 }
-
 .project-scene.restaurant { background: linear-gradient(160deg, #2B1B12 0%, #6B3A1F 55%, #C97A3C 100%); }
 .project-scene.coffee { background: linear-gradient(160deg, #241812 0%, #4A2E1C 55%, #8C5A2E 100%); }
 .project-scene.realestate { background: linear-gradient(160deg, #0B0F19 0%, #14233A 55%, #2C4266 100%); }
 .project-scene.ecommerce { background: linear-gradient(160deg, #0B0F19 0%, #14233A 55%, #2C4266 100%); }
-
 .project-scene::after {
   content: '';
   position: absolute; inset: 0;
   background: linear-gradient(0deg, rgba(0,0,0,0.55) 0%, transparent 60%);
 }
-
 .project-scene-text { position: relative; z-index: 1; color: var(--color-white); }
 .project-scene-text .tag {
   display: inline-block;
@@ -885,53 +908,149 @@ h1, h2, h3, h4, h5 {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: var(--color-primary);
+  background: rgba(255,255,255,0.16);
   padding: 4px 10px;
   border-radius: var(--radius-pill);
   margin-bottom: var(--space-3);
 }
 .project-scene-text h4 { color: var(--color-white); font-size: 1.3rem; }
 
-/* Cover-image cards: the .velix-img wrapper fills the thumb, category badge
-   floats top-left, image zooms gently on hover (no dark overlay — the OPTYM
-   reference brief calls for a clean image, not a gradient scrim). */
-.project-thumb .velix-img { width: 100%; height: 100%; }
-.project-thumb .velix-img img { transition: transform 0.7s var(--ease-out); }
-.project-card:hover .project-thumb .velix-img img { transform: scale(1.06); }
-
-.project-badge {
-  position: absolute; top: var(--space-4); inset-inline-start: var(--space-4); z-index: 2;
-  background: rgba(255,255,255,0.94);
-  color: var(--color-ink);
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
-  padding: 6px 13px; border-radius: var(--radius-pill);
-  box-shadow: 0 6px 18px rgba(11,15,25,0.12);
-  backdrop-filter: blur(6px);
+/* ---- Equal card grid ---------------------------------------------------- */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  align-items: start; /* each card keeps its own natural height */
 }
-.project-badge.is-featured { background: var(--color-primary); color: #fff; }
 
-.project-info {
-  padding: var(--space-6) var(--space-5);
-  display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+.portfolio-card {
+  display: block;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out);
 }
-.project-info h4 { margin-bottom: var(--space-2); font-size: 1.15rem; letter-spacing: -0.01em; }
-.project-info p { font-size: 0.92rem; color: var(--color-ink-soft); line-height: 1.55; }
-.project-info .service-link {
+.portfolio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 56px -20px rgba(11,15,25,0.22), 0 0 0 1px rgba(29,78,255,0.05);
+}
+
+/* The screenshot determines the image area — no fixed aspect-ratio box,
+   no object-fit cropping, no letterboxing. Whatever ratio the real
+   screenshot is, that's the ratio the card shows. */
+.portfolio-card-media { display: block; overflow: hidden; background: var(--color-bg-soft); }
+.portfolio-card-media .velix-img { display: block; width: 100%; }
+.portfolio-card-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.45s var(--ease-out);
+}
+.portfolio-card:hover .portfolio-card-media img { transform: scale(1.02); }
+
+/* Slim dark information footer — category + number, title + arrow. */
+.portfolio-card-footer {
+  background: var(--color-ink);
+  color: var(--color-white);
+  padding: 16px 20px;
+}
+.pcf-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.pcf-cat {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+.pcf-num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.4);
+}
+.pcf-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.pcf-title {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-white);
+  letter-spacing: -0.01em;
+  text-transform: capitalize;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  /* Project titles are Latin-script (no Arabic title field in the data),
+     so keep them LTR-truncated even on an RTL page — truncating "Moassa
+     Abdeen Agricultural…" from the end reads correctly; truncating from
+     the visual start ("…al Equipment") does not. Position within the
+     RTL footer row is still controlled by the parent's flex direction. */
+  direction: ltr;
+  text-align: start;
+}
+.pcf-arrow {
   flex-shrink: 0;
-  width: 42px; height: 42px;
-  display: flex; align-items: center; justify-content: center;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px;
   border-radius: 50%;
-  border: 1.5px solid var(--color-border-strong);
-  color: var(--color-ink);
-  transition: background 0.4s var(--ease-out), border-color 0.4s var(--ease-out), color 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: var(--color-white);
+  transition: background 0.3s var(--ease-out), border-color 0.3s var(--ease-out), transform 0.3s var(--ease-out);
 }
-.project-card:hover .service-link { background: var(--color-primary); border-color: var(--color-primary); color: #fff; transform: rotate(45deg); }
+.pcf-arrow svg { width: 15px; height: 15px; }
+.portfolio-card:hover .pcf-arrow {
+  background: var(--color-royal); border-color: var(--color-royal);
+  transform: rotate(45deg);
+}
 
-.portfolio-empty { color: var(--color-muted); font-size: 0.95rem; padding: var(--space-8) 0; grid-column: 1 / -1; text-align: center; }
+.portfolio-empty { color: var(--color-muted); font-size: 0.95rem; padding: var(--space-8) 0; text-align: center; grid-column: 1 / -1; }
 
-@media (max-width: 860px) {
-  .portfolio-grid { gap: var(--space-5); }
-  .project-card:hover { transform: translateY(-4px); }
+/* Desktop-only: force all three cards to the same total height, same image
+   height and same footer height, so a screenshot with a different natural
+   aspect ratio can no longer make its card taller than its neighbors.
+   Scoped to min-width so tablet (2-up) and mobile (1-up) keep the natural,
+   un-stretched card height they already have. */
+@media (min-width: 1081px) {
+  .portfolio-grid { align-items: stretch; }
+  .portfolio-card { height: 100%; display: flex; flex-direction: column; }
+  .portfolio-card-media { flex: 0 0 auto; aspect-ratio: 2 / 1; }
+  .portfolio-card-media .velix-img { height: 100%; }
+  .portfolio-card-media img {
+    height: 100%;
+    /* A fixed ratio for all three means a real screenshot's own ratio can
+       no longer drive card height — object-fit:cover fills it instead of
+       leaving blank space, cropping only the excess left/right (or a
+       sliver top/bottom), never distorting. object-position keeps each
+       screenshot's own header/nav in frame. */
+    object-fit: cover;
+    object-position: center top;
+  }
+  .portfolio-card-footer {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 96px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .portfolio-wide { width: 94%; }
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-5); }
+}
+
+@media (max-width: 720px) {
+  .portfolio-wide { width: 100%; }
+  .portfolio-header-row { margin-bottom: var(--space-6); }
+  .portfolio-nav-arrows { display: none; }
+  .portfolio-grid { grid-template-columns: 1fr; gap: var(--space-6); }
+  .portfolio-card:hover { transform: none; }
 }
 
 /* -------------------------------------------------------------------------
@@ -1273,7 +1392,7 @@ h1, h2, h3, h4, h5 {
    21. RESPONSIVE
    ------------------------------------------------------------------------- */
 @media (max-width: 1080px) {
-  .services-grid, .portfolio-grid, .testimonial-grid, .news-grid, .project-gallery, .related-projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid, .testimonial-grid, .news-grid, .project-gallery, .related-projects-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; row-gap: var(--space-7); }
   .stats-row { grid-template-columns: repeat(2, 1fr); row-gap: var(--space-6); }
 }
@@ -1294,7 +1413,7 @@ h1, h2, h3, h4, h5 {
 @media (max-width: 720px) {
   .container { padding-inline: var(--space-5); }
   .section { padding-block: var(--space-8); }
-  .services-grid, .portfolio-grid, .testimonial-grid, .form-grid, .news-grid, .project-gallery, .related-projects-grid { grid-template-columns: 1fr; }
+  .services-grid, .testimonial-grid, .form-grid, .news-grid, .project-gallery, .related-projects-grid { grid-template-columns: 1fr; }
   .process-track { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: var(--space-3); text-align: center; }
@@ -1645,54 +1764,6 @@ h1, h2, h3, h4, h5 {
 .portfolio-filters button:hover { color: var(--color-primary); }
 .portfolio-filters button.active { background: var(--color-ink); color: #fff; box-shadow: 0 10px 24px rgba(11,15,25,0.22); }
 
-/* Card container is deliberately unboxed — no border, no card background —
-   so the browser-frame screenshot is the only thing that reads as an
-   object; a soft ambient glow lifts off the page on hover instead. */
-.project-card {
-  background: transparent; border: none; box-shadow: none; border-radius: 0;
-  position: relative; isolation: isolate;
-}
-.project-card::before {
-  content: '';
-  position: absolute; inset: -30px;
-  background: radial-gradient(circle at 30% 15%, rgba(10,18,29,0.18), transparent 65%);
-  opacity: 0; filter: blur(24px);
-  transition: opacity var(--duration-slow) var(--ease-out);
-  z-index: -1; pointer-events: none;
-}
-.project-card:hover { transform: none; border-color: transparent; box-shadow: none; }
-.project-card:hover::before { opacity: 1; }
-
-.project-thumb {
-  overflow: visible;
-  padding: 16px 16px 0;
-  border-radius: 20px;
-  background: linear-gradient(155deg, #EEF1F6 0%, #E1E5F0 100%);
-}
-.project-thumb .mockup {
-  border-radius: 14px 14px 0 0;
-  box-shadow: 0 24px 50px -18px rgba(10,18,29,0.32), 0 8px 20px -8px rgba(10,18,29,0.18);
-  transition: box-shadow var(--duration-slow) var(--ease-out), transform var(--duration-slow) var(--ease-out);
-}
-.project-card:hover .project-thumb .mockup {
-  transform: translateY(-6px);
-  box-shadow: 0 36px 70px -16px rgba(10,18,29,0.42), 0 14px 30px -8px rgba(10,18,29,0.24);
-}
-.project-card:hover .project-thumb .project-scene { transform: scale(1.05); }
-
-.project-badge {
-  top: -10px; inset-inline-start: auto; inset-inline-end: 24px; z-index: 3;
-  background: var(--color-white); border: 1px solid var(--color-border);
-  box-shadow: 0 10px 22px rgba(11,15,25,0.16);
-}
-.project-badge.is-featured { border-color: var(--color-primary); }
-
-.project-info { padding: var(--space-6) var(--space-2) 0; }
-.project-info .service-link { background: var(--color-primary-tint); border: none; }
-.project-card:hover .service-link { box-shadow: 0 10px 22px rgba(10,18,29,0.25); }
-
-.portfolio-empty { text-align: center; padding: var(--space-9) 0; color: var(--color-muted); }
-
 /* ==========================================================================
    PROJECT DETAIL PAGE — redesigned, OPTYM-inspired: light, spacious, calm
    ========================================================================== */
@@ -1760,6 +1831,111 @@ h1, h2, h3, h4, h5 {
 }
 .scroll-indicator svg { width: 16px; height: 16px; animation: velixScrollBounce 1.8s ease-in-out infinite; }
 @keyframes velixScrollBounce { 0%, 100% { transform: translateY(0); opacity: 0.5; } 50% { transform: translateY(7px); opacity: 1; } }
+
+/* ==========================================================================
+   PROJECT GALLERY VIEWER (PGV) — the first thing visitors see on a project
+   page: a large, contained screenshot viewer (no cropping, no stretching),
+   prev/next + keyboard + swipe navigation, an image counter, and an
+   optional thumbnail strip. Replaces the old "big hero, then a long
+   vertical stack of full-width screenshots" layout — full project details
+   (client/category/year/services, Visit Website, overview, etc.) now live
+   in the .project-subheader / .project-narrative sections directly below
+   the gallery, so nothing is lost, only reordered.
+   Dark (var(--color-ink)) so the same brand-dark surface already used for
+   the portfolio card footers now bookends the whole experience.
+   ========================================================================== */
+.pgv {
+  padding-top: 150px;
+  padding-bottom: var(--space-8);
+  background: var(--color-ink);
+  color: var(--color-white);
+  overflow: hidden;
+}
+.pgv-container { display: flex; flex-direction: column; align-items: center; }
+
+.pgv-topbar { width: 100%; max-width: 1180px; display: flex; justify-content: flex-end; margin-bottom: var(--space-5); }
+.pgv-counter { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.03em; color: rgba(255,255,255,0.55); direction: ltr; unicode-bidi: isolate; }
+.pgv-counter-sep { margin: 0 4px; opacity: 0.5; }
+
+.pgv-stage { position: relative; width: 100%; max-width: 1180px; display: flex; align-items: center; justify-content: center; }
+.pgv-frame {
+  position: relative; width: 100%; border-radius: 18px; overflow: hidden; cursor: zoom-in;
+  background: rgba(255,255,255,0.03);
+  box-shadow: 0 40px 90px -30px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06);
+}
+.pgv-frame img { display: block; width: 100%; max-height: min(58vh, 640px); object-fit: contain; background: transparent; }
+/* The site-wide .velix-img wrapper defaults to a light "shimmer" backdrop
+   (var(--color-bg-soft)) so a loading/letterboxed image never shows raw
+   black — right everywhere else, but a bright strip on either side of a
+   contained screenshot inside this dark viewer. Override it to match the
+   dark frame instead. */
+.pgv-frame .velix-img { background: transparent; }
+.pgv-frame .velix-img-fallback { background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.5); }
+.pgv-frame .velix-img.is-loading::before { background: linear-gradient(100deg, rgba(255,255,255,0.03) 30%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 70%); }
+
+/* Prev/next stay fixed to their visual left/right regardless of text
+   direction, matching the site's existing lightbox convention (see the RTL
+   section below): they step through an image sequence — a spatial concept,
+   not text — so flipping them with the reading direction would make "next"
+   point at the previous image. */
+.pgv-nav {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+  width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.22); color: var(--color-white);
+  backdrop-filter: blur(6px);
+  transition: background 0.3s var(--ease-out), border-color 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+.pgv-nav svg { width: 19px; height: 19px; }
+.pgv-nav:hover { background: var(--color-royal); border-color: var(--color-royal); }
+.pgv-nav.prev { left: -8px; }
+.pgv-nav.next { right: -8px; }
+.pgv-nav:hover.prev { transform: translateY(-50%) translateX(-3px); }
+.pgv-nav:hover.next { transform: translateY(-50%) translateX(3px); }
+@media (max-width: 1240px) { .pgv-nav.prev { left: 10px; } .pgv-nav.next { right: 10px; } }
+
+.pgv-info { width: 100%; max-width: 1180px; margin-top: var(--space-6); text-align: center; }
+.pgv-num { display: block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; color: var(--color-royal); direction: ltr; unicode-bidi: isolate; }
+.pgv-cat { display: block; margin-top: 6px; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); }
+.pgv-title { margin-top: 10px; font-size: clamp(1.5rem, 3vw, 2.2rem); color: var(--color-white); }
+
+.pgv-thumbs {
+  width: 100%; max-width: 1180px; margin-top: var(--space-6);
+  display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;
+}
+.pgv-thumb {
+  width: 84px; height: 54px; border-radius: 10px; overflow: hidden; flex-shrink: 0;
+  border: 2px solid transparent; opacity: 0.5; cursor: pointer; padding: 0; background: none;
+  transition: opacity 0.3s var(--ease-out), border-color 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+.pgv-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pgv-thumb:hover { opacity: 0.85; transform: translateY(-2px); }
+.pgv-thumb.is-active { opacity: 1; border-color: var(--color-royal); }
+
+@media (max-width: 1080px) {
+  .pgv { padding-top: 130px; }
+  .pgv-frame img { max-height: 46vh; }
+}
+@media (max-width: 720px) {
+  .pgv { padding-top: 104px; padding-bottom: var(--space-6); }
+  .pgv-frame img { max-height: 40vh; border-radius: 14px; }
+  .pgv-nav { width: 40px; height: 40px; }
+  .pgv-nav.prev { left: 6px; } .pgv-nav.next { right: 6px; }
+  .pgv-thumbs { display: none; }
+  .pgv-title { font-size: 1.3rem; }
+}
+
+/* Compact project header (client/category/year/services + Visit Website)
+   now sits AFTER the gallery instead of before it — same fields, same
+   ids, just reordered so the screenshots are the first thing visitors see. */
+.project-subheader { padding-top: var(--space-8); }
+.project-subheader .lede { max-width: 700px; margin-inline: auto; text-align: center; color: var(--color-ink-soft); font-size: 1.05rem; line-height: 1.7; }
+.project-subheader .project-meta-row { justify-content: center; }
+.project-subheader .project-hero-actions { justify-content: center; }
+@media (max-width: 720px) {
+  .project-subheader .project-meta-row { justify-content: flex-start; }
+  .project-subheader .project-hero-actions { justify-content: flex-start; }
+}
 
 /* Overview / Challenge / Solution / Results */
 .project-narrative { padding-block: var(--space-9); }
@@ -2323,6 +2499,8 @@ h1, h2, h3, h4, h5 {
 [dir="rtl"] .btn svg,
 [dir="rtl"] .btn-ghost svg,
 [dir="rtl"] .service-link svg,
+[dir="rtl"] .portfolio-nav-btn svg,
+[dir="rtl"] .pcf-arrow svg,
 [dir="rtl"] .footer-newsletter button svg {
   transform: scaleX(-1);
 }
@@ -2344,7 +2522,10 @@ h1, h2, h3, h4, h5 {
 /* The lightbox and gallery-card arrows deliberately stay fixed to their
    visual left/right regardless of text direction: they navigate through an
    image sequence (a spatial concept), not text, so flipping them with the
-   reading direction would make "next" point at the previous image. */
+   reading direction would make "next" point at the previous image. The
+   project gallery viewer's .pgv-nav arrows (and its swipe/keyboard
+   handling in assets/js/project-gallery.js) follow the same rule for the
+   same reason — see the comment above .pgv-nav. */
 
 /* Numerals, phone numbers and emails stay LTR even inside RTL text flow */
 [dir="rtl"] .footer-contact-item a[href^="tel:"],
@@ -2399,7 +2580,7 @@ select:focus-visible {
 
 /* Cards feel a touch more premium with a subtle press-in on tap (mobile) */
 .service-card:active,
-.project-card:active,
+.portfolio-card:active,
 .testimonial-card:active,
 .news-card:active,
 .founder-card:active { transform: translateY(-2px); }
@@ -2418,7 +2599,7 @@ img, svg, video { max-width: 100%; }
 table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
 @media (prefers-reduced-motion: reduce) {
-  .stat-item, .process-step, .service-card, .project-card, .testimonial-card, .news-card, .founder-card {
+  .stat-item, .process-step, .service-card, .portfolio-card, .testimonial-card, .news-card, .founder-card {
     transition: none !important;
   }
 }
