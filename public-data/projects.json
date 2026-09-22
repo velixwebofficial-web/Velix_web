@@ -1,0 +1,111 @@
+[
+  {
+    "id": "4b4cf669-79e1-4591-b742-44f11698111e",
+    "slug": "velix-cybersecurity",
+    "title": "VELIX Cybersecurity",
+    "subtitle": "",
+    "client": "VELIXX",
+    "category": "Cybersecurity",
+    "location": "",
+    "completionDate": "2026-06-03",
+    "featured": true,
+    "published": true,
+    "websiteUrl": "",
+    "description": "A modern cybersecurity platform developed by VELIXX to help businesses assess and improve their website security. The platform provides security scanning, vulnerability assessment, security analysis, and cybersecurity tools through a professional and easy-to-use interface.",
+    "overview": "",
+    "challenge": "",
+    "solution": "",
+    "results": [],
+    "services": [],
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js",
+      "Cybersecurity"
+    ],
+    "cover": "/uploads/projects/1789316811323-289874b0811e927d.png",
+    "gallery": [
+      "/uploads/projects/1789316823746-3e83172d1723b314.png",
+      "/uploads/projects/1789316823734-b42d72bea639461f.png",
+      "/uploads/projects/1789316823742-2f42ce42c678f341.png"
+    ],
+    "seoTitle": "VELIX Cybersecurity",
+    "seoDescription": "A modern cybersecurity platform developed by VELIXX to help businesses assess and improve their website security. The platform provides security scanning, vulnerability assessment, security analysis, and cybersecurity tools through a professional and easy-to-use interface.",
+    "sortOrder": 0,
+    "createdAt": "2026-09-13T16:28:32.705Z",
+    "updatedAt": "2026-09-13T16:28:32.705Z",
+    "deletedAt": null
+  },
+  {
+    "id": "5e3761b5-b028-4f7d-8c0b-a91200e848aa",
+    "slug": "south-axis",
+    "title": "south axis",
+    "subtitle": "",
+    "client": "south axis",
+    "category": "Corporate Website",
+    "location": "",
+    "completionDate": "2026-03-11",
+    "featured": true,
+    "published": true,
+    "websiteUrl": "",
+    "description": "A modern corporate website developed for South Axis, a Jordanian company specializing in steel structures and construction solutions. The website presents the company's services, projects, capabilities, and business information through a professional and responsive digital experience.",
+    "overview": "",
+    "challenge": "",
+    "solution": "",
+    "results": [],
+    "services": [],
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Responsive Design"
+    ],
+    "cover": "/uploads/projects/1789316774289-a119753acaaeddd4.png",
+    "gallery": [
+      "/uploads/projects/1789316786982-9098c7957b31c937.png"
+    ],
+    "seoTitle": "south axis",
+    "seoDescription": "A modern corporate website developed for South Axis, a Jordanian company specializing in steel structures and construction solutions. The website presents the company's services, projects, capabilities, and business information through a professional and responsive digital experience.",
+    "sortOrder": 0,
+    "createdAt": "2026-09-13T16:26:28.427Z",
+    "updatedAt": "2026-09-13T16:29:48.844Z",
+    "deletedAt": null
+  },
+  {
+    "id": "b5b158c0-0198-4ac6-b2d0-862c485f5d06",
+    "slug": "moassa-abdeen-agricultural-equipment",
+    "title": "Moassa Abdeen Agricultural Equipment",
+    "subtitle": "",
+    "client": "Moassa Abdeen",
+    "category": "Corporate Website",
+    "location": "",
+    "completionDate": "2024-07-09",
+    "featured": true,
+    "published": true,
+    "websiteUrl": "",
+    "description": "A modern responsive corporate website developed for Moassa Abdeen, a Jordanian company specializing in agricultural equipment. The website presents the company's products, services, and business information through a professional and user-friendly digital experience.",
+    "overview": "",
+    "challenge": "",
+    "solution": "",
+    "results": [],
+    "services": [],
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Responsive Design"
+    ],
+    "cover": "/uploads/projects/1789316368001-663ae1a4b156b25d.png",
+    "gallery": [
+      "/uploads/projects/1789316387894-eb4a5ed2d9de593d.png",
+      "/uploads/projects/1789316387890-3f43def8943cb165.png"
+    ],
+    "seoTitle": "Moassa Abdeen Agricultural Equipment",
+    "seoDescription": "A modern responsive corporate website developed for Moassa Abdeen, a Jordanian company specializing in agricultural equipment. The website presents the company's products, services, and business information through a professional and user-friendly digital experience.",
+    "sortOrder": 0,
+    "createdAt": "2026-09-13T16:22:10.785Z",
+    "updatedAt": "2026-09-13T16:22:10.785Z",
+    "deletedAt": null
+  }
+]
