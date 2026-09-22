@@ -50,35 +50,49 @@
 <div aria-hidden="true" class="page-loader"><div class="loader-ring"></div></div>
 <header class="navbar">
 <div class="container">
-<a aria-label="VELIX Web Solutions home" class="brand" href="index.html">
-<img alt="VELIX Web Solutions" src="assets/img/logo.png"/>
-</a>
+<a aria-label="VELIX Web Solutions home" class="brand" href="index.html"><img alt="VELIX Web Solutions" src="assets/img/logo.png"/></a>
 <nav aria-label="Primary" class="nav-links">
 <a data-i18n="t_8cf04a97" href="index.html">Home</a>
-<a class="active" data-i18n="t_992a0f05" href="services.html">Services</a>
+<a class="active" aria-current="page" data-i18n="t_992a0f05" href="services.html">Services</a>
 <a data-i18n="t_d4f859a9" href="portfolio.html">Portfolio</a>
 <a data-i18n="t_8f7f4c1c" href="about.html">About</a>
 <a data-i18n="t_dd1ba187" href="news.html">News</a>
 <a data-i18n="t_bbaff128" href="contact.html">Contact</a>
 </nav>
-<div class="nav-actions"><button type="button" class="lang-switch" id="langSwitch" aria-label="Switch language"><span class="lang-cur">EN</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
-<a class="btn btn-primary" href="contact.html"><span data-i18n="t_725c6fdd">
-        Start Your Project
-        </span><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"></path></svg>
-</a>
+<div class="nav-actions">
+<div class="lang-seg" id="langSegDesktop" role="group" aria-label="Website language" data-i18n-aria="t_lang_group"><button type="button" class="lang-seg-btn" data-lang="en" lang="en">EN</button><span class="lang-seg-sep" aria-hidden="true"></span><button type="button" class="lang-seg-btn" data-lang="ar" lang="ar">AR</button></div>
+<a class="btn btn-quote" href="quote.html"><span data-i18n="t_cta_quote">Request a Quote</span><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"></path></svg></a>
 </div>
-<button aria-expanded="false" aria-label="Toggle menu" class="nav-toggle" data-i18n-aria="t_641fd993"><span></span><span></span><span></span></button>
+<button aria-controls="mobileNav" aria-expanded="false" aria-label="Open menu" class="nav-toggle" data-i18n-aria="t_nav_open" id="navToggle" type="button">
+<span></span><span></span><span></span>
+</button>
 </div>
 </header>
 <div class="mobile-nav-backdrop" aria-hidden="true"></div>
-<nav aria-label="Mobile" class="mobile-nav">
-<a data-i18n="t_8cf04a97" href="index.html">Home</a>
-<a data-i18n="t_992a0f05" href="services.html">Services</a>
-<a data-i18n="t_d4f859a9" href="portfolio.html">Portfolio</a>
-<a data-i18n="t_8f7f4c1c" href="about.html">About</a>
-<a data-i18n="t_dd1ba187" href="news.html">News</a>
-<a data-i18n="t_bbaff128" href="contact.html">Contact</a>
-<button type="button" class="lang-switch lang-switch-mobile" id="langSwitchMobile" aria-label="Switch language"><span class="lang-cur">EN</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><a class="btn btn-primary" data-i18n="t_725c6fdd" href="contact.html">Start Your Project</a>
+<nav aria-hidden="true" aria-label="Mobile" class="mobile-nav" id="mobileNav">
+<div class="mobile-nav-top">
+<a aria-label="VELIX Web Solutions home" class="brand mobile-nav-brand" href="index.html"><img alt="VELIX Web Solutions" src="assets/img/logo.png"/></a>
+<button aria-label="Close menu" class="mobile-nav-close" data-i18n-aria="t_nav_close" id="mobileNavClose" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+</div>
+<div class="mobile-nav-body">
+<div class="mobile-nav-links">
+<a class="mnav-link" data-i18n="t_8cf04a97" href="index.html">Home</a>
+<a class="mnav-link active" aria-current="page" data-i18n="t_992a0f05" href="services.html">Services</a>
+<a class="mnav-link" data-i18n="t_d4f859a9" href="portfolio.html">Portfolio</a>
+<a class="mnav-link" data-i18n="t_8f7f4c1c" href="about.html">About</a>
+<a class="mnav-link" data-i18n="t_dd1ba187" href="news.html">News</a>
+<a class="mnav-link" data-i18n="t_bbaff128" href="contact.html">Contact</a>
+</div>
+<div class="mobile-nav-cta">
+<a class="btn btn-quote btn-block" href="quote.html"><span data-i18n="t_cta_quote">Request a Quote</span><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"></path></svg></a>
+<a class="btn btn-outline btn-block" data-i18n="t_cta_contact" href="contact.html">Contact Us</a>
+<p class="mobile-nav-cta-hint" data-i18n="t_cta_hint">Free consultation — reply within one business day.</p>
+</div>
+<div class="mobile-nav-lang">
+<span class="mobile-nav-lang-label" data-i18n="t_lang_label">Language</span>
+<div class="lang-seg lang-seg-lg" id="langSegMobile" role="group" aria-label="Website language" data-i18n-aria="t_lang_group"><button type="button" class="lang-seg-btn" data-lang="en" lang="en">EN</button><span class="lang-seg-sep" aria-hidden="true"></span><button type="button" class="lang-seg-btn" data-lang="ar" lang="ar">AR</button></div>
+</div>
+</div>
 </nav>
 <a class="skip-link" data-i18n="t_skip_link" href="#main-content">Skip to main content</a>
 <main id="main-content">
@@ -333,12 +347,7 @@
 <h2 data-i18n="t_90487df4">Not sure which service fits?</h2>
 <p data-i18n="t_48968248">Tell us about your business and we'll recommend the right starting point — no obligation.</p>
 </div>
-<div class="cta-band-actions">
-<a class="btn btn-white btn-lg" href="contact.html"><span data-i18n="t_e672c6f1">
-            Talk to Us
-            </span><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"></path></svg>
-</a>
-</div>
+<div class="cta-band-actions"><a class="btn btn-white btn-lg" href="quote.html"><span data-i18n="t_cta_quote">Request a Quote</span><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"></path></svg></a><a class="btn btn-outline-light btn-lg" data-i18n="t_cta_contact" href="contact.html">Contact Us</a></div>
 </div>
 </div>
 </section>
@@ -385,7 +394,7 @@
 </li>
 <li class="footer-contact-item">
 <svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="2" width="20" x="2" y="4"></rect><path d="m2 7 10 6 10-6"></path></svg>
-<a data-i18n="t_ee57f5dd" href="mailto:velixweb.official@gmail.com">velixweb.official@gmail.com</a>
+<a data-i18n="t_ee57f5dd" href="mailto:hello@velixweb.xyz">hello@velixweb.xyz</a>
 </li>
 <li class="footer-contact-item">
 <svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>

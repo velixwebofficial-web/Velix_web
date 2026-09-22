@@ -34,7 +34,10 @@
   .contact-form-card input, .contact-form-card select, .contact-form-card textarea {
     width: 100%; padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-border-strong); font-size: 0.95rem;
   }
-  .contact-form-card textarea { resize: vertical; }
+  .contact-form-card textarea { resize: vertical; min-height: 130px; }
+  .contact-form-card input, .contact-form-card textarea { min-height: 48px; font-size: 1rem; }
+  .contact-form-card input:focus, .contact-form-card textarea:focus { outline: none; border-color: var(--color-royal); box-shadow: 0 0 0 3px var(--color-royal-tint); }
+  .contact-form-card .label-optional { font-weight: 500; color: var(--color-muted); }
   .contact-form-card .field-error {
     display: none; font-size: 0.8rem; font-weight: 600; color: #D6293E; margin-top: 6px;
   }
@@ -60,17 +63,42 @@
 <a data-i18n="t_d4f859a9" href="portfolio.html">Portfolio</a>
 <a data-i18n="t_8f7f4c1c" href="about.html">About</a>
 <a data-i18n="t_dd1ba187" href="news.html">News</a>
-<a class="active" data-i18n="t_bbaff128" href="contact.html">Contact</a>
+<a class="active" aria-current="page" data-i18n="t_bbaff128" href="contact.html">Contact</a>
 </nav>
-<div class="nav-actions"><button type="button" class="lang-switch" id="langSwitch" aria-label="Switch language"><span class="lang-cur">EN</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><a class="btn btn-primary" href="#contact-form"><span data-i18n="t_725c6fdd">Start Your Project</span><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"></path></svg></a></div>
-<button aria-expanded="false" aria-label="Toggle menu" class="nav-toggle" data-i18n-aria="t_641fd993"><span></span><span></span><span></span></button>
+<div class="nav-actions">
+<div class="lang-seg" id="langSegDesktop" role="group" aria-label="Website language" data-i18n-aria="t_lang_group"><button type="button" class="lang-seg-btn" data-lang="en" lang="en">EN</button><span class="lang-seg-sep" aria-hidden="true"></span><button type="button" class="lang-seg-btn" data-lang="ar" lang="ar">AR</button></div>
+<a class="btn btn-quote" href="quote.html"><span data-i18n="t_cta_quote">Request a Quote</span><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"></path></svg></a>
+</div>
+<button aria-controls="mobileNav" aria-expanded="false" aria-label="Open menu" class="nav-toggle" data-i18n-aria="t_nav_open" id="navToggle" type="button">
+<span></span><span></span><span></span>
+</button>
 </div>
 </header>
 <div class="mobile-nav-backdrop" aria-hidden="true"></div>
-<nav aria-label="Mobile" class="mobile-nav">
-<a data-i18n="t_8cf04a97" href="index.html">Home</a><a data-i18n="t_992a0f05" href="services.html">Services</a><a data-i18n="t_d4f859a9" href="portfolio.html">Portfolio</a>
-<a data-i18n="t_8f7f4c1c" href="about.html">About</a><a data-i18n="t_dd1ba187" href="news.html">News</a><a data-i18n="t_bbaff128" href="contact.html">Contact</a>
-<button type="button" class="lang-switch lang-switch-mobile" id="langSwitchMobile" aria-label="Switch language"><span class="lang-cur">EN</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><a class="btn btn-primary" data-i18n="t_725c6fdd" href="#contact-form">Start Your Project</a>
+<nav aria-hidden="true" aria-label="Mobile" class="mobile-nav" id="mobileNav">
+<div class="mobile-nav-top">
+<a aria-label="VELIX Web Solutions home" class="brand mobile-nav-brand" href="index.html"><img alt="VELIX Web Solutions" src="assets/img/logo.png"/></a>
+<button aria-label="Close menu" class="mobile-nav-close" data-i18n-aria="t_nav_close" id="mobileNavClose" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+</div>
+<div class="mobile-nav-body">
+<div class="mobile-nav-links">
+<a class="mnav-link" data-i18n="t_8cf04a97" href="index.html">Home</a>
+<a class="mnav-link" data-i18n="t_992a0f05" href="services.html">Services</a>
+<a class="mnav-link" data-i18n="t_d4f859a9" href="portfolio.html">Portfolio</a>
+<a class="mnav-link" data-i18n="t_8f7f4c1c" href="about.html">About</a>
+<a class="mnav-link" data-i18n="t_dd1ba187" href="news.html">News</a>
+<a class="mnav-link active" aria-current="page" data-i18n="t_bbaff128" href="contact.html">Contact</a>
+</div>
+<div class="mobile-nav-cta">
+<a class="btn btn-quote btn-block" href="quote.html"><span data-i18n="t_cta_quote">Request a Quote</span><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"></path></svg></a>
+<a class="btn btn-outline btn-block" data-i18n="t_cta_contact" href="contact.html">Contact Us</a>
+<p class="mobile-nav-cta-hint" data-i18n="t_cta_hint">Free consultation — reply within one business day.</p>
+</div>
+<div class="mobile-nav-lang">
+<span class="mobile-nav-lang-label" data-i18n="t_lang_label">Language</span>
+<div class="lang-seg lang-seg-lg" id="langSegMobile" role="group" aria-label="Website language" data-i18n-aria="t_lang_group"><button type="button" class="lang-seg-btn" data-lang="en" lang="en">EN</button><span class="lang-seg-sep" aria-hidden="true"></span><button type="button" class="lang-seg-btn" data-lang="ar" lang="ar">AR</button></div>
+</div>
+</div>
 </nav>
 <a class="skip-link" data-i18n="t_skip_link" href="#main-content">Skip to main content</a>
 <main id="main-content">
@@ -86,41 +114,60 @@
 <div class="container">
 <div class="grid contact-grid">
 <div class="contact-form-card" data-reveal="">
-<form id="contact-form" novalidate="">
+<h2 data-i18n="t_c_form_title" style="font-size:1.5rem;margin-bottom:var(--space-5)">Send us a message</h2>
+<form data-lead-form="Contact Message" id="contact-form" novalidate="">
+
+<!-- Honeypot: hidden from people, irresistible to bots. -->
+<div style="position:absolute;left:-9999px" aria-hidden="true">
+<label for="c-botcheck">Leave this field empty</label>
+<input id="c-botcheck" name="botcheck" tabindex="-1" type="checkbox"/>
+</div>
+
 <div class="field">
 <label data-i18n="t_f11b368c" for="c-name">Full name</label>
-<input aria-describedby="err-c-name" autocomplete="name" id="c-name" minlength="2" name="name" required=""/>
+<input aria-describedby="err-c-name" autocomplete="name" id="c-name" minlength="2" name="name" required="" type="text"/>
 <span class="field-error" id="err-c-name" role="alert" aria-live="polite"></span>
 </div>
-<div class="field">
-<label data-i18n="t_bcc254b5" for="c-phone">Phone</label>
-<input aria-describedby="err-c-phone" autocomplete="tel" id="c-phone" name="phone" pattern="^[0-9+()\-\s]{7,}$" required="" type="tel"/>
-<span class="field-error" id="err-c-phone" role="alert" aria-live="polite"></span>
-</div>
+
 <div class="field">
 <label data-i18n="t_ce8ae9da" for="c-email">Email</label>
-<input aria-describedby="err-c-email" autocomplete="email" id="c-email" name="email" required="" type="email"/>
+<input aria-describedby="err-c-email" autocomplete="email" id="c-email" inputmode="email" name="email" required="" type="email"/>
 <span class="field-error" id="err-c-email" role="alert" aria-live="polite"></span>
 </div>
-<div class="field"><label data-i18n="t_8a581d98" for="c-company">Company (optional)</label><input autocomplete="organization" id="c-company" name="company"/></div>
-<div class="field"><label data-i18n="t_0fb3fd17" for="c-budget">Estimated budget (optional)</label><input data-i18n-placeholder="t_f74d147e" id="c-budget" name="budget" placeholder="e.g. 100 - 500 JOD"/></div>
-<div class="field"><label data-i18n="t_4215323b" for="c-timeline">Desired timeline (optional)</label><input data-i18n-placeholder="t_8489486c" id="c-timeline" name="timeline" placeholder="e.g. Within 4 weeks"/></div>
+
 <div class="field">
-<label data-i18n="t_5a3f1a97" for="c-details">Project details</label>
-<textarea aria-describedby="err-c-details" data-i18n-placeholder="t_2b8719bc" id="c-details" minlength="10" name="projectDetails" placeholder="What are you looking to build?" required="" rows="4"></textarea>
+<label for="c-phone"><span data-i18n="t_bcc254b5">Phone</span> <span class="label-optional" data-i18n="t_q_optional">(optional)</span></label>
+<input autocomplete="tel" id="c-phone" inputmode="tel" name="phone" pattern="^[0-9+()\-\s]{7,}$" type="tel"/>
+<span class="field-error" id="err-c-phone" role="alert" aria-live="polite"></span>
+</div>
+
+<div class="field">
+<label data-i18n="t_c_message" for="c-details">Message</label>
+<textarea aria-describedby="err-c-details" data-i18n-placeholder="t_c_message_ph" id="c-details" minlength="10" name="projectDetails" placeholder="How can we help?" required="" rows="5"></textarea>
 <span class="field-error" id="err-c-details" role="alert" aria-live="polite"></span>
 </div>
-<button class="btn btn-accent btn-lg" style="width:100%;justify-content:center" type="submit"><span data-i18n="t_1432f327">Send Message
-              </span><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"></path></svg>
-</button>
+
+<button class="btn btn-primary btn-lg btn-block" type="submit"><span data-i18n="t_c_submit">Send Message</span><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"></path></svg></button>
 </form>
+
+<p class="quote-submit-note" style="margin-top:var(--space-5)">
+<span data-i18n="t_c_quote_nudge">Looking for pricing on a specific project?</span>
+<a class="btn-ghost" data-i18n="t_c_quote_link" href="quote.html" style="font-size:0.85rem">Request a quote instead</a>
+</p>
+
 <div class="form-success" role="status" aria-live="polite">
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
-<span data-i18n="t_e02ff252">Thanks — your message has been received. We'll be in touch shortly.</span>
+<span data-i18n="t_form_success">Thanks — your request has been sent. We'll be in touch within one business day.</span>
 </div>
+
 <div class="form-error-banner" role="alert" aria-live="assertive">
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4M12 16h.01"></path></svg>
-<span>Something went wrong sending your message. Please email us directly at <a href="mailto:velixweb.official@gmail.com">velixweb.official@gmail.com</a>.</span>
+<span data-i18n="t_form_error">We couldn't send your message just now. Please email us at hello@velixweb.xyz or call +962 79 969 1748 — your answers are still in the form.</span>
+</div>
+
+<div class="form-error-banner form-offline-banner" role="alert" aria-live="assertive">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4M12 16h.01"></path></svg>
+<span data-i18n="t_form_offline">Online submission isn't connected yet, so this form can't send your message. Please email hello@velixweb.xyz or call +962 79 969 1748 — your answers are still in the form so you can copy them across.</span>
 </div>
 </div>
 <div data-reveal="" data-reveal-delay="1">
@@ -133,7 +180,7 @@
 </div>
 <div class="contact-info-item">
 <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="2" width="20" x="2" y="4"></rect><path d="m2 7 10 6 10-6"></path></svg></div>
-<div><strong data-i18n="t_ce8ae9da">Email</strong><br/><a data-i18n="t_ee57f5dd" href="mailto:velixweb.official@gmail.com">velixweb.official@gmail.com</a></div>
+<div><strong data-i18n="t_ce8ae9da">Email</strong><br/><a data-i18n="t_ee57f5dd" href="mailto:hello@velixweb.xyz">hello@velixweb.xyz</a></div>
 </div>
 <div class="contact-info-item">
 <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>

@@ -47,8 +47,14 @@
     "t_07806fdb": "Website Security",
     "t_7c9b4ee4": "Proactive protection that keeps your website, data and customers safe.",
     "t_60973a23": "Our Work",
-    "t_d3a010d4": "Selected concept projects",
+    "t_d3a010d4": "Projects That Make an Impact",
     "t_eb1d7577": "View All Projects",
+    "t_pf_header_desc": "A selection of real projects built for real businesses — from concept to launch.",
+    "t_pf_nav_prev": "View all projects",
+    "t_pf_nav_next": "View all projects",
+    "t_pf_project": "Project",
+    "t_pf_empty_all": "No projects yet — add your first one in the Admin Dashboard.",
+    "t_pf_empty_cat": "No projects in this category yet.",
     "t_18cf3cb6": "Concept Project",
     "t_eaf13dda": "Taste the Experience",
     "t_b3ff1ed2": "Restaurant Website",
@@ -129,7 +135,7 @@
     "t_10d0de28": "Maintenance",
     "t_9cfc9b74": "Contact Us",
     "t_fb95fd83": "+962 79 969 1748",
-    "t_ee57f5dd": "velixweb.official@gmail.com",
+    "t_ee57f5dd": "hello@velixweb.xyz",
     "t_e4a7cab7": "Amman, Jordan",
     "t_b270c77e": "Get the latest news and offers from VELIX.",
     "t_a541ecda": "©",
@@ -347,8 +353,81 @@
     "t_404_title": "This page wandered off.",
     "t_404_body": "The page you're looking for doesn't exist — it may have moved, or the link might have a typo. Let's get you back on track.",
     "t_404_home": "Back to Homepage",
-    "t_404_work": "View Our Work"
+    "t_404_work": "View Our Work",
+
+    /* --- rebuilt navigation, CTA system and quote form --- */
+    "t_cta_quote": "Request a Quote",
+    "t_cta_contact": "Contact Us",
+    "t_cta_hint": "Free consultation — reply within one business day.",
+    "t_cta_view_work": "View Our Work",
+    "t_cta_view_projects": "View Projects",
+    "t_lang_label": "Language",
+    "t_lang_group": "Website language",
+    "t_nav_open": "Open menu",
+    "t_nav_close": "Close menu",
+    "t_cta_services_title": "Know what you need?",
+    "t_cta_services_body": "Send us the details and we'll come back with scope, timeline and a fixed price.",
+    "t_cta_final_title": "Have a project in mind?",
+    "t_cta_final_body": "Tell us what you're building. We'll review your requirements and reply with clear next steps — no obligation.",
+    "t_q_breadcrumb": "Request a Quote",
+    "t_q_eyebrow": "Request a Quote",
+    "t_q_h1": "Tell us about your project",
+    "t_q_lede": "Tell us about your project. We'll review your requirements and get back to you with the next steps — usually within one business day.",
+    "t_q_name": "Full name",
+    "t_q_email": "Email",
+    "t_q_company": "Company",
+    "t_q_phone": "Phone / WhatsApp",
+    "t_q_type": "Project type",
+    "t_q_budget": "Budget range",
+    "t_q_timeline": "Timeline",
+    "t_q_desc": "Project description",
+    "t_q_optional": "(optional)",
+    "t_q_select": "Please select…",
+    "t_q_desc_ph": "What do you want to build, who is it for, and what would success look like?",
+    "t_q_name_ph": "e.g. Sara Haddad",
+    "t_q_company_ph": "e.g. Cedar Trading Co.",
+    "t_q_phone_ph": "+962 7…",
+    "t_q_submit": "Send Quote Request",
+    "t_q_privacy": "Your details are used only to prepare your quote. We never share them.",
+    "t_q_type_new": "New website",
+    "t_q_type_redesign": "Website redesign",
+    "t_q_type_ecom": "E-commerce store",
+    "t_q_type_landing": "Landing page",
+    "t_q_type_corp": "Corporate website",
+    "t_q_type_app": "Web application",
+    "t_q_type_security": "Website security",
+    "t_q_type_care": "Maintenance & support",
+    "t_q_type_other": "Something else",
+    "t_q_budget_1": "Under 300 JOD",
+    "t_q_budget_2": "300 – 800 JOD",
+    "t_q_budget_3": "800 – 2,000 JOD",
+    "t_q_budget_4": "2,000 – 5,000 JOD",
+    "t_q_budget_5": "5,000+ JOD",
+    "t_q_budget_unsure": "Not sure yet",
+    "t_q_time_asap": "As soon as possible",
+    "t_q_time_month": "Within a month",
+    "t_q_time_quarter": "1 – 3 months",
+    "t_q_time_later": "3+ months",
+    "t_q_time_explore": "Just exploring",
+    "t_q_next_title": "What happens next",
+    "t_q_step1_h": "We read your brief",
+    "t_q_step1_p": "Your request goes straight to the founder — not a queue.",
+    "t_q_step2_h": "We reply within one business day",
+    "t_q_step2_p": "With clarifying questions, or a clear scope and fixed price if the brief is complete.",
+    "t_q_step3_h": "A free consultation",
+    "t_q_step3_p": "A short call to align on goals, timeline and budget before any commitment.",
+    "t_q_direct_title": "Prefer to talk first?",
+    "t_form_success": "Thanks — your request has been sent. We'll be in touch within one business day.",
+    "t_form_error": "We couldn't send your request just now. Please email us at hello@velixweb.xyz or call +962 79 969 1748 — your answers are still in the form.",
+    "t_form_offline": "Online submission isn't connected yet, so this form can't send your request. Please email hello@velixweb.xyz or call +962 79 969 1748 — your answers are still in the form so you can copy them across.",
+    "t_c_form_title": "Send us a message",
+    "t_c_message": "Message",
+    "t_c_message_ph": "How can we help?",
+    "t_c_submit": "Send Message",
+    "t_c_quote_nudge": "Looking for pricing on a specific project?",
+    "t_c_quote_link": "Request a quote instead"
   },
+
   "ar": {
     "t_641fd993": "فتح القائمة",
     "t_8cf04a97": "الرئيسية",
@@ -380,8 +459,14 @@
     "t_07806fdb": "أمان المواقع",
     "t_7c9b4ee4": "حماية استباقية تحافظ على سلامة موقعك وبياناتك وعملائك.",
     "t_60973a23": "أعمالنا",
-    "t_d3a010d4": "مشاريع مفاهيمية مختارة",
+    "t_d3a010d4": "مشاريعنا تتحدث عنّا",
     "t_eb1d7577": "عرض جميع المشاريع",
+    "t_pf_header_desc": "مجموعة من المشاريع الحقيقية التي نفّذناها لعملاء حقيقيين — من الفكرة إلى الإطلاق.",
+    "t_pf_nav_prev": "عرض جميع المشاريع",
+    "t_pf_nav_next": "عرض جميع المشاريع",
+    "t_pf_project": "مشروع",
+    "t_pf_empty_all": "لا توجد مشاريع بعد — أضف أول مشروع من لوحة التحكم.",
+    "t_pf_empty_cat": "لا توجد مشاريع في هذا التصنيف بعد.",
     "t_18cf3cb6": "مشروع مفاهيمي",
     "t_eaf13dda": "تذوق التجربة",
     "t_b3ff1ed2": "موقع مطعم",
@@ -462,7 +547,7 @@
     "t_10d0de28": "الصيانة",
     "t_9cfc9b74": "تواصل معنا",
     "t_fb95fd83": "‎+962 79 969 1748",
-    "t_ee57f5dd": "velixweb.official@gmail.com",
+    "t_ee57f5dd": "hello@velixweb.xyz",
     "t_e4a7cab7": "عمّان، الأردن",
     "t_b270c77e": "احصل على آخر الأخبار والعروض من فيليكس.",
     "t_a541ecda": "©",
@@ -680,7 +765,79 @@
     "t_404_title": "هذه الصفحة غير موجودة.",
     "t_404_body": "الصفحة التي تبحث عنها غير موجودة — ربما تم نقلها أو أن الرابط به خطأ. لنعدك إلى المسار الصحيح.",
     "t_404_home": "العودة إلى الرئيسية",
-    "t_404_work": "شاهد أعمالنا"
+    "t_404_work": "شاهد أعمالنا",
+
+    /* --- rebuilt navigation, CTA system and quote form --- */
+    "t_cta_quote": "اطلب عرض سعر",
+    "t_cta_contact": "تواصل معنا",
+    "t_cta_hint": "استشارة مجانية — نرد خلال يوم عمل واحد.",
+    "t_cta_view_work": "شاهد أعمالنا",
+    "t_cta_view_projects": "تصفح المشاريع",
+    "t_lang_label": "اللغة",
+    "t_lang_group": "لغة الموقع",
+    "t_nav_open": "فتح القائمة",
+    "t_nav_close": "إغلاق القائمة",
+    "t_cta_services_title": "تعرف ما تحتاجه؟",
+    "t_cta_services_body": "أرسل لنا التفاصيل وسنعود إليك بنطاق العمل والجدول الزمني وسعر ثابت.",
+    "t_cta_final_title": "لديك مشروع في ذهنك؟",
+    "t_cta_final_body": "أخبرنا بما تريد بناءه. سنراجع متطلباتك ونرد عليك بخطوات واضحة — دون أي التزام.",
+    "t_q_breadcrumb": "طلب عرض سعر",
+    "t_q_eyebrow": "طلب عرض سعر",
+    "t_q_h1": "أخبرنا عن مشروعك",
+    "t_q_lede": "أخبرنا عن مشروعك. سنراجع متطلباتك ونعود إليك بالخطوات التالية — عادةً خلال يوم عمل واحد.",
+    "t_q_name": "الاسم الكامل",
+    "t_q_email": "البريد الإلكتروني",
+    "t_q_company": "الشركة",
+    "t_q_phone": "الهاتف / واتساب",
+    "t_q_type": "نوع المشروع",
+    "t_q_budget": "الميزانية التقديرية",
+    "t_q_timeline": "الإطار الزمني",
+    "t_q_desc": "وصف المشروع",
+    "t_q_optional": "(اختياري)",
+    "t_q_select": "اختر…",
+    "t_q_desc_ph": "ما الذي تريد بناءه، ولمن، وكيف يبدو النجاح بالنسبة لك؟",
+    "t_q_name_ph": "مثال: سارة حداد",
+    "t_q_company_ph": "مثال: شركة الأرز للتجارة",
+    "t_q_phone_ph": "‎+962 7…",
+    "t_q_submit": "أرسل طلب العرض",
+    "t_q_privacy": "نستخدم بياناتك فقط لإعداد عرض السعر الخاص بك، ولا نشاركها مع أي جهة.",
+    "t_q_type_new": "موقع إلكتروني جديد",
+    "t_q_type_redesign": "إعادة تصميم موقع",
+    "t_q_type_ecom": "متجر إلكتروني",
+    "t_q_type_landing": "صفحة هبوط",
+    "t_q_type_corp": "موقع شركة",
+    "t_q_type_app": "تطبيق ويب",
+    "t_q_type_security": "حماية المواقع",
+    "t_q_type_care": "صيانة ودعم",
+    "t_q_type_other": "شيء آخر",
+    "t_q_budget_1": "أقل من 300 دينار",
+    "t_q_budget_2": "300 – 800 دينار",
+    "t_q_budget_3": "800 – 2,000 دينار",
+    "t_q_budget_4": "2,000 – 5,000 دينار",
+    "t_q_budget_5": "أكثر من 5,000 دينار",
+    "t_q_budget_unsure": "غير محدد بعد",
+    "t_q_time_asap": "في أقرب وقت ممكن",
+    "t_q_time_month": "خلال شهر",
+    "t_q_time_quarter": "من شهر إلى ثلاثة أشهر",
+    "t_q_time_later": "أكثر من ثلاثة أشهر",
+    "t_q_time_explore": "ما زلت أستكشف الخيارات",
+    "t_q_next_title": "ما الذي سيحدث بعد ذلك",
+    "t_q_step1_h": "نقرأ طلبك",
+    "t_q_step1_p": "يصل طلبك مباشرة إلى المؤسس، وليس إلى قائمة انتظار.",
+    "t_q_step2_h": "نرد خلال يوم عمل واحد",
+    "t_q_step2_p": "بأسئلة توضيحية، أو بنطاق عمل واضح وسعر ثابت إذا كان الطلب مكتملاً.",
+    "t_q_step3_h": "استشارة مجانية",
+    "t_q_step3_p": "مكالمة قصيرة للاتفاق على الأهداف والجدول الزمني والميزانية قبل أي التزام.",
+    "t_q_direct_title": "تفضل التحدث أولاً؟",
+    "t_form_success": "شكراً لك — تم إرسال طلبك. سنتواصل معك خلال يوم عمل واحد.",
+    "t_form_error": "تعذّر إرسال طلبك الآن. يرجى مراسلتنا على hello@velixweb.xyz أو الاتصال على 1748 969 79 962+ — إجاباتك ما زالت محفوظة في النموذج.",
+    "t_form_offline": "لم يتم ربط الإرسال الإلكتروني بعد، لذا لا يستطيع هذا النموذج إرسال طلبك. يرجى مراسلتنا على hello@velixweb.xyz أو الاتصال على 1748 969 79 962+ — إجاباتك ما زالت في النموذج لتتمكن من نسخها.",
+    "t_c_form_title": "أرسل لنا رسالة",
+    "t_c_message": "الرسالة",
+    "t_c_message_ph": "كيف يمكننا مساعدتك؟",
+    "t_c_submit": "إرسال الرسالة",
+    "t_c_quote_nudge": "تبحث عن سعر لمشروع محدد؟",
+    "t_c_quote_link": "اطلب عرض سعر بدلاً من ذلك"
   }
 };
 
@@ -735,7 +892,22 @@
         "aria-label",
         lang === "ar" ? "Switch to English" : "التبديل إلى العربية"
       );
-      el.setAttribute("title", lang === "ar" ? "العربية" : "English");
+      el.setAttribute("title", lang === "ar" ? "English" : "العربية");
+    });
+
+    /* Segmented EN | AR control. Both options are always on screen and the
+       current one is filled in, so there is no ambiguity about whether the
+       label names the language you are in or the one you would move to.
+       aria-pressed carries the same information to assistive tech. */
+    document.querySelectorAll(".lang-seg-btn").forEach(function (btn) {
+      var isActive = btn.getAttribute("data-lang") === lang;
+      btn.classList.toggle("is-active", isActive);
+      btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+      var target = btn.getAttribute("data-lang");
+      btn.setAttribute(
+        "aria-label",
+        target === "ar" ? "التبديل إلى العربية / Switch to Arabic" : "Switch to English"
+      );
     });
   }
 
@@ -754,8 +926,20 @@
   }
 
   function initSwitchers() {
+    /* Legacy single-pill toggle — still used by the admin sidebar. */
     document.querySelectorAll(".lang-switch").forEach(function (btn) {
       btn.addEventListener("click", toggleLang);
+    });
+
+    /* Segmented control: each button selects its own language directly
+       rather than toggling, so tapping "EN" while already in English is a
+       no-op instead of a surprise switch to Arabic. */
+    document.querySelectorAll(".lang-seg-btn").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        var target = btn.getAttribute("data-lang");
+        if (target && target !== currentLang) setLang(target);
+      });
     });
   }
 

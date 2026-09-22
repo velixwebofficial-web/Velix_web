@@ -17,7 +17,7 @@
   const CONTACT = {
     phone: '+962 79 969 1748',
     phoneHref: '+962799691748',
-    email: 'velixweb.official@gmail.com',
+    email: 'hello@velixweb.xyz',
     facebook: 'https://www.facebook.com/profile.php?id=61591738294523',
     instagram: 'https://www.instagram.com/velixweb26/'
   };

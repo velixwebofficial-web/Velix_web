@@ -4,21 +4,37 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   FORM CONFIG — connect the contact form to a real inbox
+   FORM CONFIG — connect the quote + contact forms to a real inbox
    --------------------------------------------------------------------------
-   1. Go to https://formspree.io and create a free account.
-   2. Create a new form, point it at velixweb.official@gmail.com (or whatever
-      inbox should receive leads).
-   3. Formspree gives you an endpoint that looks like:
-      https://formspree.io/f/abcdEFGH
-   4. Paste that endpoint below, replacing the placeholder.
-   Until this is set to a real endpoint, submissions are only saved locally
-   in the visitor's own browser and will NEVER reach you — so this step is
-   not optional before the site goes live.
+   THE SITE IS STATIC. There is no server on the public host that can send an
+   email (server.js runs locally and only serves /admin), so form delivery has
+   to go through a third-party submission service. This site uses Web3Forms.
+
+   TO TURN THE FORMS ON — one step, about two minutes:
+     1. Go to https://web3forms.com
+     2. Enter  hello@velixweb.xyz  in the "Create Access Key" box.
+     3. Web3Forms emails an access key (a UUID) to that address.
+     4. Paste it below, replacing REPLACE_WITH_WEB3FORMS_ACCESS_KEY.
+
+   Every submission then arrives as an email at hello@velixweb.xyz. Nothing
+   else needs configuring and no account/dashboard is required.
+
+   UNTIL THE KEY IS SET, the forms do NOT pretend to work. Submitting shows a
+   clearly-worded failure notice with the direct email and phone number, and
+   the visitor's typed answers are left in the form so nothing is lost. That
+   is deliberate: a fake "thanks, we got it!" loses real leads silently.
    -------------------------------------------------------------------------- */
 const VELIX_CONFIG = {
-  formspreeEndpoint: 'https://formspree.io/f/REPLACE_ME'
+  web3formsKey: 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY',
+  web3formsEndpoint: 'https://api.web3forms.com/submit',
+  inboxEmail: 'hello@velixweb.xyz',
+  inboxPhone: '+962799691748'
 };
+
+function velixFormsAreLive() {
+  const k = VELIX_CONFIG.web3formsKey;
+  return !!k && k.indexOf('REPLACE_WITH') === -1;
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   initLoader();
@@ -27,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCursor();
   initScrollReveal();
   initCounters();
-  initContactForm();
+  initLeadForms();
   initNewsletterForms();
   initYear();
   initActiveNavLink();
@@ -78,30 +94,97 @@ function initMobileNav() {
   const toggle = document.querySelector('.nav-toggle');
   const mobileNav = document.querySelector('.mobile-nav');
   const backdrop = document.querySelector('.mobile-nav-backdrop');
+  const closeBtn = document.querySelector('.mobile-nav-close');
   if (!toggle || !mobileNav) return;
 
-  const closeNav = () => {
-    toggle.classList.remove('is-active');
+  let lastFocused = null;
+
+  const focusables = () =>
+    Array.from(
+      mobileNav.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )
+    ).filter((el) => el.offsetParent !== null);
+
+  const i18nAria = (key, fallback) => {
+    if (window.VELIX_I18N && typeof window.VELIX_I18N.t === 'function') {
+      const val = window.VELIX_I18N.t(key);
+      if (val) return val;
+    }
+    return fallback;
+  };
+
+  const openNav = () => {
+    lastFocused = document.activeElement;
+    mobileNav.classList.add('is-open');
+    mobileNav.setAttribute('aria-hidden', 'false');
+    toggle.classList.add('is-active');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', i18nAria('t_nav_close', 'Close menu'));
+    if (backdrop) backdrop.classList.add('is-open');
+    document.body.classList.add('nav-open');
+    // Focus the close button so a keyboard/screen-reader user lands inside
+    // the drawer rather than continuing through the page behind it.
+    if (closeBtn) closeBtn.focus();
+  };
+
+  const closeNav = ({ restoreFocus = true } = {}) => {
+    if (!mobileNav.classList.contains('is-open')) return;
     mobileNav.classList.remove('is-open');
+    mobileNav.setAttribute('aria-hidden', 'true');
+    toggle.classList.remove('is-active');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', i18nAria('t_nav_open', 'Open menu'));
     if (backdrop) backdrop.classList.remove('is-open');
-    document.body.style.overflow = '';
+    document.body.classList.remove('nav-open');
+    if (restoreFocus && lastFocused && typeof lastFocused.focus === 'function') {
+      lastFocused.focus();
+    }
   };
 
   toggle.addEventListener('click', () => {
-    const isOpen = mobileNav.classList.toggle('is-open');
-    toggle.classList.toggle('is-active', isOpen);
-    if (backdrop) backdrop.classList.toggle('is-open', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    if (mobileNav.classList.contains('is-open')) closeNav();
+    else openNav();
   });
 
-  if (backdrop) backdrop.addEventListener('click', closeNav);
+  if (closeBtn) closeBtn.addEventListener('click', () => closeNav());
+  if (backdrop) backdrop.addEventListener('click', () => closeNav());
 
-  mobileNav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', closeNav);
+  // Navigating away closes the drawer. The language buttons must NOT close it:
+  // switching language is a change you want to see applied to the open menu.
+  mobileNav.querySelectorAll('a[href]').forEach((link) => {
+    link.addEventListener('click', () => closeNav({ restoreFocus: false }));
   });
 
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeNav();
+  document.addEventListener('keydown', (e) => {
+    if (!mobileNav.classList.contains('is-open')) return;
+
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closeNav();
+      return;
+    }
+
+    // Keep Tab inside the drawer while it is open.
+    if (e.key === 'Tab') {
+      const items = focusables();
+      if (!items.length) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
+
+  // Rotating to landscape or resizing up to desktop must not leave the page
+  // scroll-locked behind a drawer that is no longer displayed.
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 940) closeNav({ restoreFocus: false });
   });
 }
 
@@ -270,14 +353,23 @@ function initCounters() {
 }
 
 /* --------------------------------------------------------------------------
-   Contact form — lightweight client-side validation + friendly success state
-   (No backend wired up: swap the submit handler for a real endpoint.)
-   -------------------------------------------------------------------------- */
-function initContactForm() {
-  const form = document.querySelector('#contact-form');
-  if (!form) return;
+   Lead forms — the contact form and the quote form share one handler.
 
-  const success = document.querySelector('.form-success');
+   HONESTY RULE: the success panel is shown only after the submission service
+   confirms delivery. If the service is not configured, or the request fails,
+   the visitor sees a failure notice with a direct email and phone link and
+   their answers stay in the form. No submission is ever reported as
+   delivered unless it was.
+   -------------------------------------------------------------------------- */
+function initLeadForms() {
+  document.querySelectorAll('form[data-lead-form]').forEach(initLeadForm);
+}
+
+function initLeadForm(form) {
+  const card = form.closest('.contact-form-card, .quote-card') || form.parentElement;
+  const success = card.querySelector('.form-success');
+  const errorBanner = card.querySelector('.form-error-banner');
+  const offlineBanner = card.querySelector('.form-offline-banner');
 
   const i18nText = (key, fallback) => {
     if (window.VELIX_I18N && typeof window.VELIX_I18N.t === 'function') {
@@ -318,78 +410,135 @@ function initContactForm() {
   };
 
   // Live feedback as the person types/leaves a field
-  form.querySelectorAll('input[required], textarea[required], input[type="email"]').forEach((field) => {
-    field.addEventListener('blur', () => validateField(field));
-    field.addEventListener('input', () => {
-      if (field.closest('.field').classList.contains('is-invalid')) validateField(field);
+  form
+    .querySelectorAll('input[required], select[required], textarea[required], input[type="email"]')
+    .forEach((field) => {
+      const evt = field.tagName === 'SELECT' ? 'change' : 'blur';
+      field.addEventListener(evt, () => validateField(field));
+      field.addEventListener('input', () => {
+        const wrapper = field.closest('.field');
+        if (wrapper && wrapper.classList.contains('is-invalid')) validateField(field);
+      });
     });
-  });
+
+  const hideBanners = () => {
+    [success, errorBanner, offlineBanner].forEach((el) => {
+      if (el) el.classList.remove('is-visible');
+    });
+  };
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+    hideBanners();
 
-    const fields = Array.from(form.querySelectorAll('input, textarea')).filter((f) => f.required || f.type === 'email');
-    const allValid = fields.map(validateField).every(Boolean);
+    // Honeypot: a real visitor never fills a field they cannot see. Silently
+    // accept and discard, so a bot gets no signal that it was detected.
+    const honeypot = form.querySelector('input[name="botcheck"]');
+    if (honeypot && honeypot.checked) return;
+
+    const controls = Array.from(form.querySelectorAll('input, select, textarea')).filter(
+      (f) => f.type !== 'checkbox' && f.type !== 'hidden'
+    );
+    const mustValidate = controls.filter((f) => f.required || f.type === 'email');
+    const allValid = mustValidate.map(validateField).every(Boolean);
 
     if (!allValid) {
-      const firstInvalid = form.querySelector('.field.is-invalid input, .field.is-invalid textarea');
-      if (firstInvalid) firstInvalid.focus();
+      const firstInvalid = form.querySelector(
+        '.field.is-invalid input, .field.is-invalid select, .field.is-invalid textarea'
+      );
+      if (firstInvalid) {
+        firstInvalid.focus();
+        firstInvalid.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      }
       return;
     }
 
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalLabel = submitBtn.innerHTML;
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = i18nText('t_sending', 'Sending…');
 
     const data = {};
-    fields.forEach((f) => { data[f.name || f.id] = f.value.trim(); });
+    controls.forEach((f) => {
+      const key = f.name || f.id;
+      if (key && f.value.trim()) data[key] = f.value.trim();
+    });
 
-    // Best-effort: also save this lead through the server's /api/leads
-    // endpoint (see assets/js/store.js's VELIX.leads.create) so it shows up
-    // in the Admin > Leads Kanban immediately, exactly like leads captured
-    // by the chat widget. This must never block the actual notification
-    // below (mailto/Formspree is what guarantees a human sees it), so
-    // failures are logged, not thrown.
-    if (window.VELIX && VELIX.leads) {
-      VELIX.leads.create(Object.assign({}, data, {
-        name: data.name || data.fullName || data.email,
-        source: 'Contact Form'
-      })).catch((err) => {
-        console.warn('VELIX: contact form lead was not saved to the CRM. The email notification below still went out.', err);
-      });
-    }
+    const formLabel = form.dataset.leadForm || 'Website Form';
 
-    const finish = (ok) => {
+    const restoreButton = () => {
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalLabel;
-      if (ok) {
-        form.reset();
-        form.querySelectorAll('.field').forEach((w) => w.classList.remove('is-valid', 'is-invalid'));
-        if (success) success.classList.add('is-visible');
-      } else if (errorBanner) {
-        errorBanner.classList.add('is-visible');
-      }
     };
 
-    const errorBanner = form.querySelector('.form-error-banner');
-    const endpoint = VELIX_CONFIG.formspreeEndpoint;
+    const showPanel = (panel) => {
+      if (!panel) return;
+      panel.classList.add('is-visible');
+      panel.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    };
 
-    if (!endpoint || endpoint.indexOf('REPLACE_ME') !== -1) {
-      const subject = encodeURIComponent('New inquiry from ' + (data.name || 'website visitor'));
-      const body = encodeURIComponent(Object.entries(data).map(([k, v]) => `${k}: ${v}`).join('\n'));
-      window.location.href = `mailto:velixweb.official@gmail.com?subject=${subject}&body=${body}`;
-      finish(true);
+    /* ----- Not configured yet: say so plainly, keep the visitor's answers ---
+       Previously this branch opened a mailto: link and then displayed the
+       success panel unconditionally — on a phone that usually does nothing
+       at all, so the visitor was told their message had been received when
+       nothing had been sent and nothing had been stored. */
+    if (!velixFormsAreLive()) {
+      console.error(
+        'VELIX: form not sent — no Web3Forms access key is configured. ' +
+          'See the FORM CONFIG block at the top of assets/js/script.js.'
+      );
+      showPanel(offlineBanner || errorBanner);
       return;
     }
 
-    fetch(endpoint, {
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = i18nText('t_sending', 'Sending…');
+
+    // Best-effort mirror into the local admin CRM (server.js /api/leads).
+    // On the public static host this endpoint does not exist and the call
+    // simply fails — which is fine, it is a convenience, never the delivery
+    // mechanism, and it must not influence what the visitor is told.
+    if (window.VELIX && VELIX.leads) {
+      VELIX.leads
+        .create(
+          Object.assign({}, data, {
+            name: data.name || data.fullName || data.email,
+            source: formLabel
+          })
+        )
+        .catch(() => {
+          /* expected on the static host — the email below is the real path */
+        });
+    }
+
+    const payload = Object.assign({}, data, {
+      access_key: VELIX_CONFIG.web3formsKey,
+      subject: `${formLabel} — ${data.name || 'website visitor'}`,
+      from_name: 'VELIX Website'
+    });
+
+    fetch(VELIX_CONFIG.web3formsEndpoint, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(data)
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(payload)
     })
-      .then((res) => finish(res.ok))
-      .catch(() => finish(false));
+      .then((res) => res.json().then((json) => ({ ok: res.ok, json })))
+      .then(({ ok, json }) => {
+        restoreButton();
+        if (ok && json && json.success) {
+          form.reset();
+          form
+            .querySelectorAll('.field')
+            .forEach((w) => w.classList.remove('is-valid', 'is-invalid'));
+          showPanel(success);
+        } else {
+          console.error('VELIX: submission rejected by Web3Forms.', json);
+          showPanel(errorBanner);
+        }
+      })
+      .catch((err) => {
+        restoreButton();
+        console.error('VELIX: submission failed to reach Web3Forms.', err);
+        showPanel(errorBanner);
+      });
   });
 }
 
@@ -458,8 +607,11 @@ function initYear() {
    -------------------------------------------------------------------------- */
 function initActiveNavLink() {
   const path = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a, .mobile-nav a').forEach((link) => {
-    const href = link.getAttribute('href').split('/').pop();
-    if (href === path) link.classList.add('active');
+  document.querySelectorAll('.nav-links a, .mobile-nav .mnav-link').forEach((link) => {
+    const href = (link.getAttribute('href') || '').split('/').pop();
+    if (href === path) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    }
   });
 }

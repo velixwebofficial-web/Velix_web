@@ -1,0 +1,2 @@
+cd "C:\Users\moats\Desktop\velix web"
+npm start
