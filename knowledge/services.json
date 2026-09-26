@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "last_updated": "2026-07-12",
+  "services": [
+    { "id": "web_design", "name": "Web Design", "description": "Custom visual design for websites, tailored to brand and audience." },
+    { "id": "web_development", "name": "Web Development", "description": "Front-end and back-end build of the designed site." },
+    { "id": "ecommerce", "name": "E-commerce", "description": "Online stores with product catalog, cart, checkout, and order management." },
+    { "id": "landing_pages", "name": "Landing Pages", "description": "Focused single-purpose pages for campaigns or lead generation." },
+    { "id": "corporate_websites", "name": "Corporate Websites", "description": "Multi-page company sites covering services, team, and contact." },
+    { "id": "seo", "name": "SEO", "description": "On-page and technical search engine optimization, plus ongoing campaigns as an add-on." },
+    { "id": "security_hardening", "name": "Security Hardening", "description": "HTTPS, hardened forms, dependency monitoring, and for sensitive platforms: rate-limiting and audits." },
+    { "id": "maintenance", "name": "Ongoing Maintenance", "description": "Updates, backups, monitoring and small content changes after the post-launch window." }
+  ]
+}

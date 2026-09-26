@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "last_updated": "2026-07-12",
+  "policies": {
+    "design_meetings": "Every design & development project includes one free live design session with no cap on revision rounds during that session, plus up to 3 working meetings during the rest of the project, each capped at 2 hours, to review progress and confirm changes.",
+    "protection_plan_meetings": "The Website Protection & Consultation plan is separate from design meetings: it starts with a free consultation meeting, then a monthly check-up and report for a full year. It does not share the 3-meeting cap.",
+    "completion_certificate": "Every completed project receives an official completion certificate once the client approves the final result, confirming delivered scope and the support window that follows. Included at no extra charge in every package.",
+    "post_launch_support": "Every project includes a post-launch support window. Ongoing maintenance beyond that window is an optional add-on plan.",
+    "revisions": "Design revisions are unlimited during the live design session itself. After that, changes are handled within the up-to-3 working meetings included in the project.",
+    "refunds_cancellation": "Not publicly published yet — if a visitor asks about refunds or cancellation terms, do not invent a policy. Say this needs to be confirmed by the team and offer to connect them (escalate_to_human).",
+    "hosting_domain": "VELIX can handle hosting and domain setup end-to-end, or work with hosting the client already has.",
+    "discounts": "No discounts are pre-authorized for the AI to offer or imply. Escalate any discount negotiation to a human."
+  }
+}

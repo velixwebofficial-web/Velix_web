@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Secrets — never committed. ADMIN_EMAIL/ADMIN_PASSWORD_HASH/
+# ADMIN_SESSION_SECRET/ANTHROPIC_API_KEY (and, if configured, a git push
+# token) live only in .env.local on the machine running server.js.
+.env
+.env.local
+.env.*.local
+
+# SQLite database + its WAL/SHM files — this is where leads, conversations
+# and every other privileged row live. It never needs to leave this
+# machine: only PUBLISHED projects/news are ever exported, and only into
+# public-data/*.json (see lib/publish.js) — the database file itself stays
+# local, on purpose.
+data/
+*.db
+*.db-wal
+*.db-shm
+
+# Local backups (scripts/backup-db.js) — this machine's own disk, not
+# something a static host or the repo needs.
+backups/
+
+# Generated public-deployment artifacts. main holds the FULL application
+# source only (server.js, lib/, api/, scripts/, package*.json, ...) —
+# these are pure build output of lib/publish.js, regenerated from SQLite
+# on every publish and pushed to the separate `gh-pages` branch instead
+# (which contains ONLY the public site — see PUBLIC_ALLOWLIST in
+# lib/publish.js). They still need to exist on local disk here so the
+# publish step can copy them into that branch; they just don't belong in
+# main's git history. Uploaded images/videos work the same way: written
+# by the admin upload API to uploads/ on local disk, copied into
+# gh-pages on publish, never committed to main.
+public-data/
+sitemap.xml
+uploads/
+
+# OS/editor noise
+.DS_Store
+*.log
+logs/

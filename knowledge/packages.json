@@ -1,0 +1,63 @@
+{
+  "version": 2,
+  "last_updated": "2026-09-26",
+  "currency": "JOD",
+  "packages": [
+    {
+      "id": "starter",
+      "name": "Website — Starter",
+      "price": 70,
+      "unit": "starting_from",
+      "page_limit": 5,
+      "best_for": ["landing page", "simple portfolio", "small business", "basic online presence"],
+      "includes": ["Responsive design", "Core pages", "Basic SEO setup", "Mobile optimization", "Project handover"]
+    },
+    {
+      "id": "business",
+      "name": "Website — Custom",
+      "price": 100,
+      "unit": "starting_from",
+      "page_limit": null,
+      "best_for": ["business websites", "service companies", "custom branded websites", "more advanced requirements"],
+      "includes": ["Custom responsive design", "Business pages", "SEO fundamentals", "Performance optimization", "Project handover"]
+    },
+    {
+      "id": "ecommerce",
+      "name": "E-commerce Store",
+      "price": 110,
+      "unit": "starting_from",
+      "page_limit": null,
+      "best_for": ["online stores", "product catalogs", "shopping carts", "online ordering"],
+      "includes": ["Product catalog", "Cart and checkout flow", "Order management", "Responsive design", "Basic SEO setup"]
+    }
+  ],
+  "pricing_note": "Website projects generally start from 70 JOD and commonly range up to around 100 JOD for more customized website work. E-commerce stores start from 110 JOD. The final price depends on the project's scope, pages, features, integrations, content and complexity. VELIX can consider a client's budget case by case, but the AI must not promise a discount or invent a final price.",
+  "addons": [
+    {
+      "id": "protection_plan",
+      "name": "Website Protection & Consultation",
+      "price": null,
+      "note": "Price on request — depends on the site and security requirements.",
+      "relevant_for": ["ecommerce", "business", "any client handling sensitive data"]
+    },
+    {
+      "id": "seo_campaign",
+      "name": "Ongoing SEO campaign",
+      "price": null,
+      "note": "Price on request — scoped to goals and competition.",
+      "relevant_for": ["business", "ecommerce"]
+    },
+    {
+      "id": "maintenance_plan",
+      "name": "Ongoing maintenance plan",
+      "price": null,
+      "note": "Price on request. Covers updates, backups, security monitoring and small content changes.",
+      "relevant_for": ["starter", "business", "ecommerce"]
+    }
+  ],
+  "business_rules": {
+    "max_discount_percent": null,
+    "discount_policy": "Budget flexibility may be considered case by case after understanding the project. The AI must not promise or invent a discount; escalate discount requests to a human.",
+    "note": "Prices shown by the AI are starting/indicative prices. Final pricing depends on project scope."
+  }
+}

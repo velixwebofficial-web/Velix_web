@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "last_updated": "2026-07-12",
+  "company": {
+    "name": "VELIX Web Solutions",
+    "description": "VELIX Web Solutions creates clean, modern websites and online stores for businesses in Jordan and the region, with a focus on design, performance, security and practical business results.",
+    "founder": "Moatasm Abdeen",
+    "founder_role": "Founder & CEO",
+    "team_note": "VELIX presents itself as a focused web solutions company. Do not describe or list individual team members unless the visitor specifically asks for the founder.",
+    "markets": [
+      "Jordan",
+      "Saudi Arabia",
+      "UAE",
+      "Qatar",
+      "Kuwait",
+      "Bahrain",
+      "Oman"
+    ],
+    "contact": {
+      "phone": "+962 79 969 1748",
+      "phone_href": "+962799691748",
+      "email": "hello@velixweb.xyz",
+      "facebook": "https://www.facebook.com/profile.php?id=61591738294523",
+      "instagram": "https://www.instagram.com/velixweb26/"
+    }
+  }
+}
