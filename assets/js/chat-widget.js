@@ -31,8 +31,8 @@
   const FAQ = [
     {
       keys: ['price', 'cost', 'how much', 'pricing', 'budget', 'quote', 'سعر', 'اسعار', 'تكلفة', 'فلوس'],
-      en: "We recently lowered our prices while adding even more value to every package:<br><br>• <strong>Starter</strong> (up to 5 pages): <strong>99 JOD</strong><br>• <strong>Business</strong> (up to 10 pages, Premium design, SEO): <strong>199 JOD</strong><br>• <strong>Professional</strong> (unlimited pages, fully custom design, animations): <strong>349 JOD</strong><br>• <strong>E-commerce store</strong> (products, cart, dashboard, order management): starting at <strong>499 JOD</strong><br><br>Every package now includes a <strong>free live design session</strong> where you watch us build your design in real time and ask for changes on the spot, up to <strong>3 working meetings</strong> (max 2 hours each) during the project, and an official <strong>completion certificate</strong> at the end. Want me to put together an exact quote for your project?",
-      ar: "خفّضنا أسعارنا مؤخرًا مع إضافة قيمة أكبر لكل باقة:<br><br>• <strong>Starter</strong> (حتى 5 صفحات): <strong>99 دينار</strong><br>• <strong>Business</strong> (حتى 10 صفحات، تصميم Premium، SEO): <strong>199 دينار</strong><br>• <strong>Professional</strong> (صفحات غير محدودة، تصميم مخصص بالكامل، Animations): <strong>349 دينار</strong><br>• <strong>متجر إلكتروني</strong> (منتجات، سلة، لوحة تحكم، إدارة طلبات): يبدأ من <strong>499 دينار</strong><br><br>كل باقة الآن تشمل <strong>جلسة تصميم مجانية مباشرة</strong> نبني فيها التصميم أمامك وتطلب التعديلات فورًا، بالإضافة إلى <strong>3 اجتماعات عمل</strong> خلال المشروع (بحد أقصى ساعتين لكل اجتماع)، و<strong>شهادة إتمام مشروع</strong> رسمية في النهاية. هل تريدني أن أجهز لك عرض سعر دقيق لمشروعك؟"
+      en: "Our website projects generally start from <strong>70 JOD</strong> and can go up to around <strong>100 JOD</strong> for more customized work. E-commerce stores start from <strong>110 JOD</strong>. The final price depends on the project scope, number of pages, features, integrations, content and complexity. If your budget is tight, tell me your budget and what you need — VELIX can consider the project case by case, but a final adjustment has to be confirmed by the company. I can also help you work out what fits your needs.",
+      ar: "أسعار المواقع عند فيليكس تبدأ عادةً من <strong>70 دينار</strong> وتوصل لحوالي <strong>100 دينار</strong> للمشاريع الأكثر تخصيصًا. المتاجر الإلكترونية تبدأ من <strong>110 دينار</strong>. السعر النهائي يعتمد على حجم المشروع، عدد الصفحات، الخصائص، الربط مع الخدمات الأخرى، المحتوى وتعقيد المشروع. إذا ميزانيتك محدودة، احكيلي ميزانيتك وشو بدك بالضبط — فيليكس بتقدر تراعي المشروع حسب حالته، لكن أي تعديل نهائي على السعر لازم يتأكد من الشركة. وبقدر أساعدك تحدد شو الأنسب لاحتياجك."
     },
     {
       keys: ['how long', 'timeline', 'duration', 'delivery time', 'how many days', 'how many weeks', 'مدة', 'وقت التسليم', 'كم يوم', 'كم اسبوع'],
@@ -116,8 +116,8 @@
     },
     {
       keys: ['who are you', 'company', 'about velix', 'مين انتوا', 'الشركة'],
-      en: 'VELIX Web Solutions is a premium web design &amp; development studio led by <strong>Moatasm Abdeen</strong> (Founder &amp; CEO), who personally reviews every project before delivery, alongside a dedicated Backend Developer. We keep the team lean so every client gets real, senior attention.',
-      ar: 'فيليكس لحلول الويب هو استوديو متميز لتصميم وتطوير المواقع يقوده <strong>Moatasm Abdeen</strong> (المؤسس والرئيس التنفيذي)، الذي يراجع شخصيًا كل مشروع قبل التسليم، إلى جانب مطوّر خلفية متخصص. نبقي الفريق صغيرًا ليحصل كل عميل على اهتمام حقيقي من كبار المختصين.'
+      en: 'VELIX Web Solutions is a web design and development company focused on clean, modern websites and online stores. The company is led by <strong>Moatasm Abdeen</strong> (Founder &amp; CEO). For project-specific questions, pricing and availability, visitors can contact <strong>${CONTACT.email}</strong>.',
+      ar: 'فيليكس لحلول الويب شركة متخصصة في تصميم وتطوير المواقع والمتاجر الإلكترونية بشكل عصري ومرتب. يقود الشركة <strong>Moatasm Abdeen</strong> (المؤسس والرئيس التنفيذي). ولأي سؤال عن مشروع محدد أو السعر أو التفاصيل، يمكن التواصل عبر <strong>${CONTACT.email}</strong>.'
     }
   ];
 

@@ -100,19 +100,37 @@
 <main id="main-content">
 <!-- ============================ HERO ============================ -->
 <section class="hero hero-photo" id="heroSection">
-<img alt="VELIX Web Solutions team" class="hero-photo-bg" src="assets/img/hero-team.png"/>
-<div class="hero-photo-overlay" aria-hidden="true"></div>
-<div class="hero-photo-fade" aria-hidden="true"></div>
-<!-- Hero copy restored: the stylesheet carried .hero-photo .hero-copy rules
-     and the dictionary carried the strings, but the markup had been dropped,
-     so the home page opened with a photograph and no headline, no value
-     proposition and no call to action at all. -->
-<div class="container hero-photo-container">
-<div class="hero-copy">
-<div class="hero-actions">
-</div>
-</div>
-</div>
+  <div class="hero-photo-surface">
+    <div class="hero-photo-copy">
+      <p class="hero-kicker" data-i18n="t_hero_kicker">PREMIUM WEB AGENCY</p>
+      <h1>
+        <span data-i18n="t_hero_title_a">Build Websites</span><br/>
+        <span data-i18n="t_hero_title_b">That Drive Results.</span>
+      </h1>
+      <p class="hero-lede" data-i18n="t_hero_lede">We create clean, modern websites that help businesses grow online.</p>
+      <div class="hero-actions" aria-label="Primary actions">
+        <a class="btn hero-action hero-action-primary" href="quote.html">
+          <span data-i18n="t_cta_quote">Request a Quote</span>
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"></path></svg>
+        </a>
+        <a class="btn hero-action hero-action-secondary" href="contact.html">
+          <span data-i18n="t_cta_contact">Contact Us</span>
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+        </a>
+        <a class="btn hero-action hero-action-tertiary" href="services.html">
+          <span data-i18n="t_992a0f05">Our Services</span>
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+        </a>
+      </div>
+      <span class="hero-scroll"><span class="hero-scroll-line"></span><span data-i18n="t_hero_scroll">SCROLL TO EXPLORE</span></span>
+    </div>
+    <div class="hero-photo-media" aria-hidden="true">
+      <picture class="hero-photo-picture">
+        <source media="(max-width: 768px)" srcset="assets/img/hero-laptop1.png" />
+        <img src="assets/img/hero-laptop.png" alt="" />
+      </picture>
+    </div>
+  </div>
 </section>
 <!-- ============================ SERVICES ============================ -->
 <section class="section" id="services">
@@ -267,12 +285,12 @@
 <p class="stat-label">Typical response time to new inquiries</p>
 </div>
 <div class="stat-item" data-reveal="" data-reveal-delay="2">
-<div class="stat-num"><span data-count="5">0</span><span class="suffix" data-i18n="t_26b17225">+</span></div>
+<div class="stat-num"><span data-count="7">0</span><span class="suffix" data-i18n="t_26b17225">+</span></div>
 <p class="stat-label" data-i18n="t_d6d27fc9">Countries served</p>
 </div>
 <div class="stat-item" data-reveal="" data-reveal-delay="3">
-<div class="stat-num"><span data-count="3">0</span></div>
-<p class="stat-label">Dedicated specialists — zero outsourcing</p>
+<div class="stat-num"><span data-count="1">0</span></div>
+<p class="stat-label">Founder-led delivery</p>
 </div>
 </div>
 </div>
